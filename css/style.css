@@ -96,6 +96,7 @@ body {
 
 .cardContainer {
     display: flex;
+    justify-content: flex-start;
     gap: 10px;
     flex-wrap: wrap;
     margin: 30px;
@@ -136,7 +137,7 @@ body {
     padding: 6px;
     position: absolute;
     right: 20px;
-    top: 170px;
+    bottom: 108px;
     opacity: var(--a);
     transition: all 1s ease-out;
 }
@@ -323,15 +324,18 @@ body {
 }
 
 
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
     .left {
         position: absolute;
-        left: -120%;
+        left: -133%;
         transition: all .3s;
         z-index: 1;
         background-color: black;
         width: 370px;
         padding: 0;
+        height: 100vh;
+        position: fixed;
+        top: 0;
     }
 
     .left .close {
@@ -369,13 +373,13 @@ body {
     }
 
     .card {
-        width: 74vw;
+        width: 44vw;
     }
 
     .cardContainer {
         margin: 0;
         justify-content: center;
-        max-height: 50vh;
+        
     }
 
     .songButtons {
@@ -396,23 +400,36 @@ body {
         flex-direction: column;
         gap: 3px;
     }
-}
-@media (max-width: 1000px) {
-    .card {
-        width: 44vw;
-    }
-}
-@media (max-width: 750px) {
-    .card {
-        width: 76vw;
-    }
-}  
-
-@media (max-width: 400px) {
-    .card {
-        width: auto;
-    }
     .cardContainer{
-        height: 30vh;
+        max-height: unset;
+        overflow-y: unset;
+        margin-bottom: 23vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        width: 100%;
+    }
+    
+    .header>*{
+        padding: 4px;
+    }
+    .buttons>*{
+        margin: 0 6px;
+    }
+    
+    .spotifyPlaylist h1 {
+        padding: 4px;
+    }
+    .library{
+        height: 85vh;
+    }
+    
+    .left{
+        height: 100vh;
+         position: fixed;
+        top: 0;
+        width: 100vw;
     }
 }

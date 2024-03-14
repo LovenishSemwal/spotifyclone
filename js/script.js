@@ -195,6 +195,9 @@ async function main() {
     // add an event to volume
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
         currentSong.volume = parseInt(e.target.value) / 100
+        if(currentSong.volume>0){
+            document.querySelector(".volume>img").src= document.querySelector(".volume>img").src.replace("mute.svg","volume.svg")            
+        }
     })
 
 
